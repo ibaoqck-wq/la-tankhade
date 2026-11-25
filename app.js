@@ -15,10 +15,10 @@ const scenarioPool = {
       explanation: 'يستغل رسائل الشحن والتوصيل مع ضغط زمني ورابط خارجي لطلب الدفع.'
     },
     {
-      sender: 'المرسل: جامعة-الباحة',
-      text: 'نذكّركم ببدء التسجيل في الورشة التوعوية للأمن الرقمي يوم الخميس الساعة 11 صباحاً.',
+      sender: 'المرسل: إشعار-توعوي',
+      text: 'تذكير بحضور جلسة توعوية حول حماية الحسابات الرقمية والانتباه للروابط المجهولة.',
       isScam: false,
-      explanation: 'رسالة إرشادية واضحة لا تطلب بيانات سرية أو روابط مشبوهة.'
+      explanation: 'إشعار توعوي مباشر لا يطلب بيانات سرية أو روابط مشبوهة.'
     },
     {
       sender: 'المرسل: تحديث-بيانات',
@@ -27,16 +27,16 @@ const scenarioPool = {
       explanation: 'يجمع بين انتحال الصفة، الاستعجال، وتحديث البيانات وطلب رمز التحقق.'
     },
     {
-      sender: 'المرسل: فرص-واستثمار',
-      text: 'فرصة استثمارية ووظيفة فورية بعائد مضمون؛ سارع بإرسال بياناتك ورمز التحقق لتأكيد القبول.',
+      sender: 'المرسل: عروض-واستثمار',
+      text: 'عرض استثماري ووظيفة فورية بعائد مرتفع؛ سارع بإرسال بياناتك ورمز التحقق لتأكيد القبول.',
       isScam: true,
-      explanation: 'الوعود المبالغ فيها بالوظائف أو الاستثمار السريع وطلب البيانات علامة احتيال.'
+      explanation: 'الوعود المبالغ فيها بالعروض والوظائف والاستثمار وطلب البيانات علامة احتيال.'
     },
     {
-      sender: 'المرسل: شؤون-الطلاب',
-      text: 'تم إتاحة الجداول الدراسية عبر البوابة الجامعية المعتمدة.',
+      sender: 'المرسل: متابعة-إدارية',
+      text: 'تم اعتماد طلبك ويمكنك متابعة تفاصيله من خلال حسابك الرسمي دون الحاجة لأي رموز إضافية.',
       isScam: false,
-      explanation: 'إشعار أكاديمي مباشر يوجّه للبوابة المعتمدة دون روابط مشبوهة أو طلب رموز.'
+      explanation: 'إشعار متابعة واضح دون ضغط زمني أو طلب بيانات حساسة.'
     }
   ],
   'scam-focus': [
@@ -53,22 +53,22 @@ const scenarioPool = {
       explanation: 'لا تشارك رمز التحقق أو بيانات الحساب، وتحقق عبر القناة الرسمية أو البنك.'
     },
     {
-      sender: 'المرسل: جوائز-سريعة',
-      text: 'مبروك! تم اختيارك لجائزة مالية، ادخل بياناتك خلال 15 دقيقة لاستلامها.',
+      sender: 'المرسل: جوائز-وعروض',
+      text: 'مبروك! تم اختيارك لعرض خاص وجائزة مالية، ادخل بياناتك خلال 15 دقيقة لاستلامها.',
       isScam: true,
-      explanation: 'استغلال الجوائز والمهلة القصيرة لانتزاع المعلومات.'
+      explanation: 'استغلال الجوائز والعروض والمهلة القصيرة لانتزاع المعلومات.'
     }
   ],
   'official-focus': [
     {
-      sender: 'المرسل: جامعة-الباحة',
-      text: 'دعوة لحضور جلسة تعريفية حول الأمن الرقمي بمقر الجامعة يوم الثلاثاء.',
+      sender: 'المرسل: مبادرة-التوعية',
+      text: 'دعوة لحضور لقاء توعوي حول الوقاية من الاحتيال الإلكتروني والروابط الزائفة.',
       isScam: false,
       explanation: 'دعوة تعريفية مباشرة خالية من الروابط المضللة أو طلب البيانات.'
     },
     {
       sender: 'المرسل: مركز-التدريب',
-      text: 'تم تسجيل حضورك في البرنامج التوعوي، ويمكنك متابعة الأنشطة من خلال المنسق.',
+      text: 'تم تسجيل مشاركتك في البرنامج التوعوي، ويمكنك متابعة الأنشطة من خلال المنسق.',
       isScam: false,
       explanation: 'إشعار متابعة عادي لا يستدعي أي إجراء مالي أو أمني عاجل.'
     }
@@ -94,8 +94,10 @@ function isSeniorActive() {
 
 function toggleSeniorMode() {
   document.body.classList.toggle('senior-mode');
+  const active = isSeniorActive();
   const btn = document.getElementById('seniorToggle');
-  btn.textContent = isSeniorActive() ? '✅ وضع كبار السن مفعّل' : '👴 وضع كبار السن';
+  btn.textContent = active ? '✅ وضع كبار السن مفعّل' : '👴 وضع كبار السن';
+  btn.setAttribute('aria-pressed', String(active));
 }
 
 function copyHotlineNumber() {
@@ -251,7 +253,7 @@ function handleUrlAnalysis(openWa = false) {
 
   box.innerHTML = `
     <span class="badge-risk ${badgeClass}">${label}</span>
-    <div style="display:flex; justify-content:space-between; font-weight:800; font-size:0.95rem;">
+    <div style="display:flex; justify-content:space-between; gap:0.5rem; flex-wrap:wrap; font-weight:800; font-size:0.95rem;">
       <span>نسبة الخطر: ${res.riskScore}%</span>
       <span>مؤشر الأمان الإرشادي: ${res.safetyScore}%</span>
     </div>
@@ -263,7 +265,7 @@ function handleUrlAnalysis(openWa = false) {
       ${allPoints.map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
     </ul>
     <p style="margin-top:0.65rem; font-size:0.86rem; color:var(--text-muted);">
-      للتحقق الرسمي: تواصل مع الجهة المعنية أو البنك أو خدمة «تحقق» على واتساب (<strong>${OFFICIAL_HOTLINE}</strong>).
+      للتحقق الرسمي: تواصل مع الجهة المعنية أو البنك أو خدمة «تحقق» على واتساب (<strong>${OFFICIAL_HOTLINE}</strong>). النتيجة إرشادية وليست حكماً نهائياً.
     </p>
     <div class="controls-row" style="margin-top:0.75rem; margin-bottom:0;">
       <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
@@ -315,11 +317,11 @@ function analyzeMessageDynamically() {
     reasons.push(`طلب بيانات حساسة أو رموز تحقق أو تحديث بيانات (${Array.from(new Set(secretMatches)).join('، ')}).`);
   }
 
-  const localScamMatches = text.match(/(شحن|توصيل|طرد|رسوم|سداد|وظيفة|توظيف|استثمار|عائد|جائزة|ربحت|مكافأة|هدية|مجاني|خصم)/gi) || [];
+  const localScamMatches = text.match(/(شحن|توصيل|طرد|رسوم|سداد|وظيفة|توظيف|استثمار|عائد|جائزة|ربحت|مكافأة|هدية|مجاني|خصم|عرض)/gi) || [];
   if (localScamMatches.length > 0) {
     risk += Math.min(28, localScamMatches.length * 12);
     flaggedTerms.push(...localScamMatches);
-    reasons.push(`مؤشرات شائعة في الرسائل المحلية مثل الشحن أو الرسوم أو الوظائف/الاستثمار أو الجوائز (${Array.from(new Set(localScamMatches)).join('، ')}).`);
+    reasons.push(`مؤشرات شائعة في الرسائل والعروض مثل الشحن أو الرسوم أو الوظائف/الاستثمار أو الجوائز (${Array.from(new Set(localScamMatches)).join('، ')}).`);
   }
 
   const linkMatches = text.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/gi) || [];
@@ -354,7 +356,7 @@ function analyzeMessageDynamically() {
 
   box.innerHTML = `
     <span class="badge-risk ${badgeClass}">${statusText}</span>
-    <div style="display:flex; justify-content:space-between; font-weight:800; font-size:0.95rem;">
+    <div style="display:flex; justify-content:space-between; gap:0.5rem; flex-wrap:wrap; font-weight:800; font-size:0.95rem;">
       <span>نسبة الاشتباه: ${risk}%</span>
       <span>مؤشر الحذر الإرشادي: ${safety}%</span>
     </div>
