@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لا تنخدع | حصانة رقمية لمجتمع واعٍ — صيتاثون 2027</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="top-utility-bar">
+    <div class="container utility-inner">
+      <span>المبادرة الوطنية المجتمعية: <strong>لا تنخدع</strong> — جامعة الباحة • صيتاثون 2027</span>
+      <a href="https://wa.me/966118136644" target="_blank" rel="noopener noreferrer">
+        خدمة «تحقق» عبر واتساب: <strong>+966 11 813 6644</strong>
+      </a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">
+        <div class="brand-badge">لا</div>
+        <div>
+          <div class="brand-title">لا تنخدع</div>
+          <div class="brand-sub">حصانة رقمية لمجتمع واعٍ</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#link-check">فاحص الروابط</a>
+        <a href="#analyzer">محلل النصوص</a>
+        <a href="#challenge">اكتشف الخدعة</a>
+        <a href="#studies">الدراسات</a>
+        <a href="#dashboard">قياس الأثر</a>
+        <a href="#plan">الخطة والشركاء</a>
+      </nav>
+
+      <button id="seniorToggle" class="btn btn-outline btn-sm" type="button">
+        👴 وضع كبار السن
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill">🛡️ مبادرة تقنية مجتمعية — جامعة الباحة • صيتاثون 2027</div>
+          <h1>لا تنخدع — حصانة رقمية لمجتمع واعٍ</h1>
+          <div class="slogan">«فكّر قبل أن تضغط.. وتحقق قبل أن تثق»</div>
+          <p class="lead">
+            منصة توعوية وتفاعلية تفحص أي رابط أو نص يدخله الزائر لحظياً بناءً على خصائصه الفعلية، وتلوّن المؤشرات المشبوهة داخل النص، وتربطه بخدمة «تحقق» عبر الواتساب، وتقيس الأثر القبلي والبعدي والتثبيت بعد 3–4 أسابيع ببيانات مجهولة الهوية.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#link-check" class="btn btn-primary">🔍 افحص رابطاً الآن</a>
+            <a href="#challenge" class="btn btn-outline">🎮 تحدي «اكتشف الخدعة»</a>
+            <a href="#dashboard" class="btn btn-outline">📈 قياس الأثر والتثبيت</a>
+          </div>
+
+          <div class="kpi-strip">
+            <div class="kpi-box">
+              <div class="kpi-num" id="heroBeneficiaries">100+</div>
+              <div class="kpi-label">مستفيد مباشر مستهدف</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-num">3</div>
+              <div class="kpi-label">ورش توعوية مستهدفة</div>
+            </div>
+            <div class="kpi-box">
+              <div class="kpi-num" id="heroGain">+25%</div>
+              <div class="kpi-label">تحسن نسبي مستهدف</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>بطاقة المبادرة — صيتاثون 2027</h3>
+          <ul class="meta-list">
+            <li><span>المبادرة</span><strong>لا تنخدع — حصانة رقمية لمجتمع واعٍ</strong></li>
+            <li><span>المسابقة</span><strong>صيتاثون 2027</strong></li>
+            <li><span>الموضوع</span><strong>حصانة مجتمع</strong></li>
+            <li><span>الجهة المشاركة</span><strong>جامعة الباحة</strong></li>
+            <li><span>الفريق</span><strong>5 أعضاء</strong></li>
+            <li><span>الفئة المستهدفة</span><strong>الطلاب وكبار السن وأولياء الأمور</strong></li>
+            <li><span>خدمة التحقق (واتساب)</span><strong>+966 11 813 6644</strong></li>
+            <li><span>قاعدة البيانات</span><strong>SQLite (مجهولة الهوية)</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Dynamic URL Inspector -->
+    <section id="link-check">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">فاحص الروابط التفاعلي وتحديد نسبة الأمان والخطر</h2>
+          <p class="section-desc">
+            الصق أو اكتب أي رابط من عندك ليقوم المحرك بتحليل بنيته والنطاق والمعاملات والكلمات فيه وحساب نسبة الأمان والخطر فعلياً، مع إمكانية توجيهه إلى محادثة الواتساب لخدمة «تحقق» (+966 11 813 6644).
+          </p>
+        </div>
+
+        <div class="link-grid">
+          <div class="card">
+            <label for="urlInput">أدخل أو الصق أي رابط لفحصه</label>
+            <input
+              id="urlInput"
+              type="text"
+              placeholder="مثال: https://portal-example.com/verify?session=123"
+              autocomplete="off"
+              spellcheck="false"
+            />
+
+            <div class="controls-row">
+              <button id="checkLinkBtn" class="btn btn-primary" type="button">
+                ⚡ تحليل نسبة الأمان والخطر الآن
+              </button>
+              <button id="sendToWaBtn" class="btn btn-outline" type="button">
+                💬 إرسال الرابط إلى واتساب (+966118136644)
+              </button>
+              <label class="inline-check">
+                <input id="autoOpenWaOnPaste" type="checkbox" />
+                فتح واتساب تلقائياً عند اللصق
+              </label>
+            </div>
+
+            <div id="linkResult" class="result-box" aria-live="polite">
+              <strong>بانتظار رابط:</strong> اكتب أو الصق أي رابط لتظهر نسبة الأمان والخطر والتحليل التفصيلي لبنية الرابط.
+            </div>
+
+            <div class="notice-bar">
+              ⚠️ لا تكتب أي بيانات سرية أو رموز تحقق. يتم تحليل الرابط نصياً وبنيوياً داخل المتصفح دون فتح الرابط المشبوه تلقائياً أو حفظه في قاعدة البيانات. النتيجة إرشادية ولا تغني عن التحقق الرسمي.
+            </div>
+          </div>
+
+          <div class="official-box">
+            <h3>الربط بخدمة «تحقق» عبر الواتساب</h3>
+            <p class="muted-text">
+              عند الشك برابط أو رسالة، تجنّب الضغط أو مشاركة البيانات وتواصل مع القنوات الرسمية أو خدمة «تحقق» على الرقم:
+            </p>
+            <div class="hotline-number">+966 11 813 6644</div>
+            <div class="controls-row">
+              <a id="directWaLink" href="https://wa.me/966118136644" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex:1;">
+                💬 فتح محادثة الواتساب
+              </a>
+              <button id="copyHotlineBtn" class="btn btn-outline" type="button">📋 نسخ الرقم</button>
+            </div>
+            <ul class="meta-list" style="margin-top:0.85rem;">
+              <li><span>البروتوكول</span><strong id="metaProto">—</strong></li>
+              <li><span>النطاق المضيف</span><strong id="metaHost">—</strong></li>
+              <li><span>عدد المعاملات</span><strong id="metaParams">—</strong></li>
+            </ul>
+            <p id="copyStatus" class="status-note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Message Analyzer & Interactive Challenge -->
+    <section id="analyzer">
+      <div class="container two-col">
+        <div class="card">
+          <div class="section-header" style="margin-bottom:1rem;">
+            <h2 class="section-title">محلل النصوص والرسائل التفاعلي (مع تلوين المؤشرات)</h2>
+            <p class="section-desc">
+              أدخل أي رسالة تجريبية غير حساسة (بدون كلمات مرور أو أرقام بطاقات أو رموز تحقق) ليتم إبراز الكلمات والعبارات المشبوهة داخل النص وتوضيح سبب الاشتباه وتوجيهك للتحقق الرسمي.
+            </p>
+          </div>
+
+          <label for="messageInput">نص الرسالة للفحص</label>
+          <textarea
+            id="messageInput"
+            rows="4"
+            placeholder="مثال: إشعار شحن وتوصيل عاجل، تحديث بيانات الحساب، وظيفة أو استثمار، جائزة، أو طلب رمز التحقق..."
+          ></textarea>
+
+          <div class="controls-row">
+            <button id="analyzeMsgBtn" class="btn btn-primary" type="button">
+              🧠 تحليل النص وتلوين المؤشرات
+            </button>
+            <button id="clearMsgBtn" class="btn btn-outline btn-sm" type="button">
+              مسح النص
+            </button>
+          </div>
+
+          <div id="msgResult" class="result-box" aria-live="polite">
+            <strong>جاهز:</strong> اكتب أي رسالة ليتم حساب نسبة الاشتباه، وتلوين المؤشرات داخل النص، وعرض خطوات التحقق الرسمية.
+          </div>
+        </div>
+
+        <div class="card" id="challenge">
+          <div class="section-header" style="margin-bottom:1rem;">
+            <h2 class="section-title">تحدي «اكتشف الخدعة» على شاشة الجوال</h2>
+            <p class="section-desc">
+              اختر نوع السيناريوهات واختبر قدرتك على كشف الخداع في رسائل محلية شائعة، مع شرح فوري بعد كل إجابة وتسجيل النتيجة المجهولة في قاعدة البيانات.
+            </p>
+          </div>
+
+          <div class="controls-row" style="margin-bottom:0.85rem;">
+            <select id="difficultySelect" aria-label="اختر نوع السيناريوهات">
+              <option value="mixed">تحدي متنوع (5 سيناريوهات)</option>
+              <option value="scam-focus">أنماط الاحتيال المحلية (شحن، بنك، جهات، وظائف، جوائز)</option>
+              <option value="official-focus">التمييز مع الإشعارات العادية</option>
+            </select>
+            <button id="restartChallengeBtn" class="btn btn-outline btn-sm" type="button">
+              🔄 إعادة ضبط التحدي
+            </button>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-top-bar">
+              <span id="roundLabel">الجولة 1 من 5</span>
+              <span id="scoreLabel">النقاط: 0</span>
+            </div>
+
+            <div class="msg-bubble">
+              <div class="msg-sender" id="scenarioSender"></div>
+              <div id="scenarioText" class="msg-body"></div>
+            </div>
+
+            <div class="game-btns">
+              <button id="btnScam" class="btn btn-danger" type="button">🚨 رسالة احتيال</button>
+              <button id="btnSafe" class="btn btn-primary" type="button">✅ رسالة آمنة</button>
+            </div>
+
+            <div id="gameFeedback" class="result-box" style="margin-top:0.85rem;" aria-live="polite">
+              حدد هل الرسالة احتيالية أم آمنة.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studies, Reports & National Figures -->
+    <section id="studies">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الدراسات والإحصاءات والتقارير الوطنية المتاحة</h2>
+          <p class="section-desc">
+            مؤشرات وتقارير منشورة حول الأمن السيبراني ومكافحة الاحتيال والوقاية الرقمية في المملكة والمنطقة.
+          </p>
+        </div>
+
+        <div class="studies-grid">
+          <div class="card study-card">
+            <div class="study-tag">الهيئة الوطنية للأمن السيبراني (NCA)</div>
+            <h3>سوق الأمن السيبراني بالمملكة (2024 – 2025)</h3>
+            <p class="muted-text">
+              وفق تقارير المؤشرات الاقتصادية للأمن السيبراني الصادرة عن الهيئة الوطنية للأمن السيبراني، بلغ حجم سوق الأمن السيبراني في المملكة نحو <strong>16.3 مليار ريال</strong> في 2025م بمعدل نمو سنوي مركب <strong>10.7%</strong>، بعد أن سجل <strong>15.2 مليار ريال</strong> في 2024م.
+            </p>
+            <a href="https://nca.gov.sa/ar/studies-and-reports/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              الاطلاع على الدراسات والتقارير (NCA) ↗
+            </a>
+          </div>
+
+          <div class="card study-card">
+            <div class="study-tag">تقارير سوق كشف ومنع الاحتيال</div>
+            <h3>احتيال المدفوعات ونمو حلول الحماية</h3>
+            <p class="muted-text">
+              تشير تقديرات سوق كشف ومنع الاحتيال في السعودية إلى وصول حجم السوق إلى نحو <strong>551.6 مليون دولار</strong> في 2026م، مع تصدر <strong>احتيال المدفوعات (37.8%)</strong> لتطبيقات الحلول، في ظل توسع المدفوعات الرقمية.
+            </p>
+            <a href="https://www.imarcgroup.com/saudi-arabia-fraud-detection-prevention-market" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              عرض تقرير السوق (IMARC) ↗
+            </a>
+          </div>
+
+          <div class="card study-card">
+            <div class="study-tag">المنصة الوطنية والمرجعيات التوعوية</div>
+            <h3>خدمة فحص الروابط والأطر النظامية</h3>
+            <p class="muted-text">
+              توضح المنصة الوطنية الموحدة خدمات فحص الروابط المشبوهة والتحقق من النطاقات الرسمية (<code>.gov.sa</code> و<code>HTTPS</code>)، كما تتناول دراسات وأدلة البنك المركزي السعودي (SAMA) وأكاديمية نايف ومركز أسبار أساليب الاحتيال المالي والوقاية منه.
+            </p>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="https://my.gov.sa/ar/services/24146" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                المنصة الوطنية ↗
+              </a>
+              <a href="https://asbar.com/report/%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%B1%D9%82%D9%85-98/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                دراسة الاحتيال المالي ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Dashboard (Pre, Post, Retention after 3-4 weeks) -->
+    <section id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">لوحة قياس الأثر (قبلي، بعدي، وتثبيت بعد 3–4 أسابيع)</h2>
+          <p class="section-desc">
+            تُحفظ الدرجات الرقمية فقط في قاعدة بيانات SQLite مجهولة الهوية دون أي معلومات شخصية، مع متابعة ثبات المعلومة بعد 3–4 أسابيع.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="card stat-box">
+            <div class="kpi-num" id="statParticipants">0</div>
+            <div class="kpi-label">إجمالي المحاولات المسجلة</div>
+          </div>
+          <div class="card stat-box">
+            <div class="kpi-num" id="statPreScore">0%</div>
+            <div class="kpi-label">متوسط الاختبار القبلي</div>
+          </div>
+          <div class="card stat-box">
+            <div class="kpi-num" id="statPostScore">0%</div>
+            <div class="kpi-label">متوسط الاختبار البعدي</div>
+          </div>
+          <div class="card stat-box">
+            <div class="kpi-num" id="statRetentionScore">0%</div>
+            <div class="kpi-label">تثبيت المعلومة (3–4 أسابيع)</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:1.25rem;">
+          <h3 style="margin-bottom:0.75rem;">تسجيل نتيجة تقييم مجهولة (قبلي / بعدي / تثبيت 3–4 أسابيع)</h3>
+          <form id="assessmentForm" class="form-grid-4">
+            <div>
+              <label for="preScoreInput">الاختبار القبلي (0–100)</label>
+              <input id="preScoreInput" type="number" min="0" max="100" value="60" required />
+            </div>
+            <div>
+              <label for="postScoreInput">الاختبار البعدي (0–100)</label>
+              <input id="postScoreInput" type="number" min="0" max="100" value="80" required />
+            </div>
+            <div>
+              <label for="retentionScoreInput">اختبار بعد 3–4 أسابيع (0–100)</label>
+              <input id="retentionScoreInput" type="number" min="0" max="100" value="78" required />
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">💾 حفظ النتيجة المجهولة</button>
+            </div>
+          </form>
+          <p id="saveStatus" class="status-note"></p>
+        </div>
+
+        <div class="card">
+          <canvas id="impactChart" height="105"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan, Workshop, Budget, Partners & Sustainability -->
+    <section id="plan">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">خطة التنفيذ، الشركاء، الميزانية والاستدامة</h2>
+          <p class="section-desc">مبادرة «لا تنخدع» — جامعة الباحة — صيتاثون 2027.</p>
+        </div>
+
+        <div class="two-col" style="margin-bottom:1.5rem;">
+          <div class="card table-wrap">
+            <h3 style="margin-bottom:0.85rem;">مراحل التنفيذ المقترحة</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>المرحلة</th>
+                  <th>الفترة المقترحة</th>
+                  <th>الأنشطة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>الإعداد والتدريب</td><td>1–14 نوفمبر 2026</td><td>حضور التدريب، تحديد الشركاء، تصميم أدوات القياس</td></tr>
+                <tr><td>التطوير التقني</td><td>15–30 نوفمبر</td><td>بناء المنصة وإعداد سيناريوهات الاحتيال التجريبية</td></tr>
+                <tr><td>الاختبار والتحسين</td><td>1–10 ديسمبر</td><td>اختبار النموذج مع عينة صغيرة وتصحيح الأخطاء</td></tr>
+                <tr><td>التنفيذ الميداني</td><td>11–31 ديسمبر</td><td>إقامة 3 ورش وأركان توعوية وتجارب تفاعلية</td></tr>
+                <tr><td>قياس الأثر والتثبيت</td><td>1–10 يناير 2027</td><td>جمع النتائج وتحليل التحسن ومتابعة التثبيت</td></tr>
+                <tr><td>التوثيق والتسليم</td><td>11–16 يناير</td><td>إعداد التقرير النهائي والأدلة والعرض</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom:0.85rem;">ركن «هل تستطيع اكتشاف الخدعة؟» — 45 دقيقة</h3>
+            <ul class="meta-list">
+              <li><span>5 دقائق</span><strong>اختبار أولي من 5 أسئلة</strong></li>
+              <li><span>10 دقائق</span><strong>عرض أمثلة آمنة لرسائل احتيالية وكيفية اكتشافها</strong></li>
+              <li><span>15 دقيقة</span><strong>تجربة المنصة والمشاركة في تحدي «اكتشف الخدعة»</strong></li>
+              <li><span>10 دقائق</span><strong>شرح خطوات الحماية والتحقق من الجهات الرسمية</strong></li>
+              <li><span>5 دقائق</span><strong>اختبار بعدي واستبيان رضا</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card table-wrap">
+            <h3 style="margin-bottom:0.85rem;">الموارد والميزانية التقديرية</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>البند</th>
+                  <th>التكلفة المقترحة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>استضافة وأدوات تقنية</td><td>150 ريال</td></tr>
+                <tr><td>مطبوعات وبطاقات توعوية</td><td>150 ريال</td></tr>
+                <tr><td>مواد وتجهيزات الركن</td><td>200 ريال</td></tr>
+                <tr><td>احتياطي لاحتياجات التنفيذ</td><td>100 ريال</td></tr>
+                <tr><td><strong>الإجمالي التقديري</strong></td><td><strong>600 ريال</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom:0.85rem;">الشركاء المقترحون، الخصوصية والاستدامة</h3>
+            <ul class="reasons-list" style="font-size:0.95rem; line-height:1.85;">
+              <li><strong>الشركاء المقترحون:</strong> عمادة شؤون الطلاب، نادي الأمن السيبراني، وكلية الحاسب بجامعة الباحة لدعم التوعية والجانب التقني والاستشاري.</li>
+              <li><strong>الخصوصية والوقاية:</strong> عدم طلب كلمات المرور أو رموز التحقق أو فتح الروابط تلقائياً، وعدم حفظ الرسائل أو الروابط أو البيانات الشخصية.</li>
+              <li><strong>التحقق الرسمي:</strong> توجيه المستخدمين للتحقق من الجهات الرسمية والبنك أو خدمة «تحقق» عبر الواتساب (+966 11 813 6644).</li>
+              <li><strong>الاستدامة:</strong> تحديث أنماط الاحتيال المحلية دورياً، وتأهيل سفراء توعية ينقلون المعلومة لأسرهم وكبار السن، وإتاحة المنصة مجاناً.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>مبادرة «لا تنخدع»</strong> — صيتاثون 2027 • جامعة الباحة</div>
+      <div>
+        خدمة «تحقق» عبر واتساب:
+        <a href="https://wa.me/966118136644" target="_blank" rel="noopener noreferrer">+966 11 813 6644</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
